@@ -47,7 +47,7 @@ const Rain = ({ rows = 15, cols = 20 }) => {
           .map((drop) => ({ ...drop, row: drop.row + 1 }))
           .filter((drop) => drop.row < rows); // Remove drops that fall off the grid
       });
-    }, 400); // Adjust interval for drop speed
+    }, 200); // Adjust interval for drop speed
 
     return () => clearInterval(interval);
   }, [cols, rows, maxGroups]);
@@ -56,7 +56,7 @@ const Rain = ({ rows = 15, cols = 20 }) => {
   useEffect(() => {
     const colorInterval = setInterval(() => {
       setBaseColor(Math.random() * 360); // Randomly change the hue value
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(colorInterval);
   }, []);
